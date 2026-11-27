@@ -38,8 +38,40 @@
 
         <section id="past-winners" class="feature-section">
             <h2>Previous Weeks</h2>
+            <p>Click on a photo to view it in full size.</p>
             <div class="winner-grid">
-                <p class="empty-note">Previous winners will appear here.</p>
+                <article class="winner-card">
+                    <img src="./Website Pictures/POTW Winners/Week 1 Winner.jpeg" alt="Winner of Week 1" onclick="expandImage(this)" draggable="false" oncontextmenu="return false;">
+                    <div class="winner-info">
+                        <h3>Week commencing 16/11/26</h3>
+                        <p class="winning-photographer">Photo by Antoine</p>
+                    </div>
+                </article>
+
+                <article class="winner-card">
+                    <img src="./Website Pictures/POTW Winners/Week 2 Winner.jpeg" alt="Winner of Week 2" onclick="expandImage(this)" draggable="false" oncontextmenu="return false;">
+                    <div class="winner-info">
+                        <h3>Week commencing 23/11/26</h3>
+                        <p class="winning-photographer">Photo by ...</p>
+                    </div>
+                </article>         
+
+                <article class="winner-card">
+                    <img src="./Website Pictures/POTW Winners/Week 3 Winner.jpeg" alt="Winner of Week 3" onclick="expandImage(this)" draggable="false" oncontextmenu="return false;">
+                    <div class="winner-info">
+                        <h3>Week commencing 30/11/26</h3>
+                        <p class="winning-photographer">Photo by ...</p>
+                    </div>
+                </article>         
+
+                <article class="winner-card">
+                    <img src="./Website Pictures/POTW Winners/Week 4 Winner.jpeg" alt="Winner of Week 4" onclick="expandImage(this)" draggable="false" oncontextmenu="return false;">
+                    <div class="winner-info">
+                        <h3>Week commencing 07/12/26</h3>
+                        <p class="winning-photographer">Photo by ...</p>
+                    </div>
+                </article>         
+
             </div>
         </section>
 
@@ -75,6 +107,19 @@
         </div>
     </footer>
 
-</body>
+<dialog id="expanded-image" onclick="this.close()">
+        <img id="expanded-img" src="" alt="Expanded image" draggable="false" oncontextmenu="return false;">
+</dialog>
 
+<script>
+    function expandImage(thumbnail) {
+    const expandedImage = document.getElementById("expanded-image");
+    const expandedImg = document.getElementById("expanded-img");
+    expandedImg.src = thumbnail.src;
+    expandedImg.alt = thumbnail.alt;
+    expandedImage.showModal();
+}
+</script>
+
+</body>
 </html>

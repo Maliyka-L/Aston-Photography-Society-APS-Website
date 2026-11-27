@@ -385,12 +385,18 @@ body > section {
 
 .winner-card {
     background-color: var(--surface-2);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.winner-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .winner-card img {
@@ -409,10 +415,31 @@ body > section {
     font-size: 1.4rem;
 }
 
-.winner-info .photographer {
+.winner-info .winning-photographer {
     color: var(--accent);
     font-weight: 600;
     margin: 0 0 10px;
+}
+
+#expanded-image {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 85vw;
+    max-height: 85vh;
+}
+
+#expanded-image::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+#expanded-img {
+    display: block;
+    max-width: 85vw;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
 .coming-soon {
@@ -436,9 +463,14 @@ body > section {
 
 .winner-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
     text-align: left;
+}
+
+.winner-grid .winner-card {
+    max-width: 250px;
+    width: 100%;
 }
 
 .winner-grid .winner-card img {
@@ -446,18 +478,21 @@ body > section {
 }
 
 .winner-grid .winner-info {
-    padding: 14px 16px;
+    padding: 8px 12px;
 }
 
 .winner-grid .winner-info h3 {
     font-size: 1.1rem;
 }
 
+/* Made this a comment for now seeing as it hasn't been used.
+
 .empty-note {
     font-style: italic;
     grid-column: 1 / -1;
     text-align: center;
 }
+*/
 
 #site-footer {
     background-color: var(--surface);
@@ -534,4 +569,5 @@ body > section {
     section {
         padding: 30px 16px;
     }
+
 }
